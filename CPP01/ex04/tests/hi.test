@@ -1,0 +1,4 @@
+This test checks for erros if the old string is bigger than the new one
+Recommended replace: "Hello" for "Hi"
+
+Hello, my name is Hello Kitty.

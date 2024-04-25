@@ -1,0 +1,4 @@
+This test verifies if the replace deals with consecutive letters without skipping.
+Recommended replace: "aa" for "AAA"
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
