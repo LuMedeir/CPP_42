@@ -1,7 +1,7 @@
 #include "../includes/ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void) : name("Unknown"), hitPoint(10), energyPoint(10), attackDemage(0){
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : name(name), hitPoint(10), energyPoint(10), attackDemage(0){
@@ -9,23 +9,23 @@ ClapTrap::ClapTrap(std::string name) : name(name), hitPoint(10), energyPoint(10)
 }
 
 ClapTrap::ClapTrap(const ClapTrap &that){
-	std::cout <<  "Copy constructor called" << std::endl;
+	std::cout <<  "ClapTrap copy constructor called" << std::endl;
 	*this = that;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &that){
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap copy assignment operator called" << std::endl;
 	if(this != &that){
-		this->name = that.name;
-		this->hitPoint = that.hitPoint;
-		this->energyPoint = that.energyPoint;
-		this->attackDemage = that.attackDemage;
+		this->name = that.getName();
+		this->hitPoint = that.getHitPoints();
+		this->energyPoint = that.getEnergyPoint();
+		this->attackDemage = that.getAttackDemage();
 	}
 	return(*this);
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
 void	ClapTrap::setHitPoints(int newHitPoint){
