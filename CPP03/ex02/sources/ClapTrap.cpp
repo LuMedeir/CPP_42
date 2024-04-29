@@ -1,10 +1,10 @@
 #include "../includes/ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : name("Unknown"), hitPoint(10), energyPoint(10), attackDemage(0){
+ClapTrap::ClapTrap(void) : name("Unknown"), hitPoint(10), energyPoint(10), attackDamage(0){
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : name(name), hitPoint(10), energyPoint(10), attackDemage(0){
+ClapTrap::ClapTrap(std::string name) : name(name), hitPoint(10), energyPoint(10), attackDamage(0){
 	std::cout << "ClapTrap name constructor called" << std::endl;
 }
 
@@ -19,7 +19,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &that){
 		this->name = that.getName();
 		this->hitPoint = that.getHitPoints();
 		this->energyPoint = that.getEnergyPoint();
-		this->attackDemage = that.getAttackDemage();
+		this->attackDamage = that.getAttackDamage();
 	}
 	return(*this);
 }
@@ -33,7 +33,7 @@ void	ClapTrap::setHitPoints(int newHitPoint){
 }
 
 int	ClapTrap::getHitPoints(void) const{
-	return(hitPoint);
+	return(this->hitPoint);
 }
 
 void	ClapTrap::setEnergyPoint(int newEnergyPoint){
@@ -41,15 +41,15 @@ void	ClapTrap::setEnergyPoint(int newEnergyPoint){
 }
 
 int	ClapTrap::getEnergyPoint(void) const{
-	return(energyPoint);
+	return(this->energyPoint);
 }
 
-void	ClapTrap::setAttackDemage(int newAttackDemage){
-	this->energyPoint = newAttackDemage;
+void	ClapTrap::setAttackDamage(int newAttackDamage){
+	this->energyPoint = newAttackDamage;
 }
 
-int	ClapTrap::getAttackDemage(void) const{
-	return(attackDemage);
+int	ClapTrap::getAttackDamage(void) const{
+	return(this->attackDamage);
 }
 
 void	ClapTrap::setName(std::string newName){
@@ -62,40 +62,40 @@ std::string ClapTrap::getName(void) const{
 
 void	ClapTrap::attack(const std::string &target){
 	if (hitPoint <=0){
-		std::cout << RED << "ClapTrap " << name << "is already dead! 😭" << RESET << std::endl;
+		std::cout << RED << name << "is already dead! 😭" << RESET << std::endl;
 		return;
 	}
 	else if (energyPoint == 0){
-		std::cout << RED << "ClapTrap " << name << " is out of energy!🔋" << RESET << std::endl;
+		std::cout << RED << name << " is out of energy!🔋" << RESET << std::endl;
 		return;
 	}
-	std::cout << RED "ClapTrap " << name << " attacks " << target <<
-		", causing " << attackDemage << " points of damage! 🛡️🗡️" RESET << std::endl;
+	std::cout << RED << name << " attacks " << target <<
+		", causing " << attackDamage << " points of damage! 🛡️🗡️" RESET << std::endl;
 	energyPoint -= 1;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount){
 	if (hitPoint <= 0){
-		std::cout << CYAN << "ClapTrap " << name << "is already dead! 😭" << RESET << std::endl;
+		std::cout << CYAN << name << "is already dead! 😭" << RESET << std::endl;
 		return;
 	}
 	if (amount >= static_cast<unsigned int>(hitPoint))
-		std::cout << CYAN << "ClapTrap " << name << "is dead! 💀" << RESET << std::endl;
+		std::cout << CYAN << name << "is dead! 💀" << RESET << std::endl;
 	else
-		std::cout << CYAN << "ClapTrap " << name << " takes " << amount << " points of demage! 🤕" << RESET << std::endl;
+		std::cout << CYAN << name << " takes " << amount << " points of Damage! 🤕" << RESET << std::endl;
 	this->hitPoint -= amount;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount){
 	if (hitPoint <=0){
-		std::cout << PURPLE << "ClapTrap " << name << "is already dead! 😭" << RESET << std::endl;
+		std::cout << PURPLE << name << "is already dead! 😭" << RESET << std::endl;
 		return;
 	}
 	else if (energyPoint == 0){
-		std::cout << PURPLE << "ClapTrap " << name << " is out of energy!🔋" << RESET << std::endl;
+		std::cout << PURPLE << name << " is out of energy!🔋" << RESET << std::endl;
 		return;
 	}
-	std::cout << PURPLE << "ClapTrap " << name << " is repaired with " <<
+	std::cout << PURPLE << name << " is repaired with " <<
 		amount << " points of energy! 🩹" RESET << std::endl;
 	this->hitPoint += amount;
 	this->energyPoint -= 1;

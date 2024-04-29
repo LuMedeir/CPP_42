@@ -1,27 +1,27 @@
 # include "../includes/ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void): ClapTrap(){
-    std::cout << "ScavTrap default constructor called" << std::endl;
-    hitPoint = 100;
-    energyPoint = 50;
-    attackDemage = 20;
+	std::cout << "ScavTrap default constructor called" << std::endl;
+	hitPoint = 100;
+	energyPoint = 50;
+	attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(){
-    std::cout << "ScavTrap name constructor called" << std::endl;
-    this->name = name;
-    hitPoint = 100;
-    energyPoint = 50;
-    attackDemage = 20;
+	std::cout << "ScavTrap name constructor called" << std::endl;
+	this->name = name;
+	hitPoint = 100;
+	energyPoint = 50;
+	attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &that): ClapTrap(){
-    std::cout <<  "ScavTrap copy constructor called" << std::endl;
+	std::cout <<  "ScavTrap copy constructor called" << std::endl;
 	*this = that;
 }
 
 ScavTrap::~ScavTrap(void){
-    std::cout <<  "ScavTrap destructor called" << std::endl;
+	std::cout <<  "ScavTrap destructor called" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &that){
@@ -30,7 +30,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &that){
 		this->name = that.getName();
 		this->hitPoint = that.getHitPoints();
 		this->energyPoint = that.getEnergyPoint();
-		this->attackDemage = that.getAttackDemage();
+		this->attackDamage = that.getAttackDamage();
 	}
 	return(*this);
 }
@@ -45,11 +45,11 @@ void	ScavTrap::attack(const std::string &target){
 		return;
 	}
 	std::cout << RED "ScavTrap " << name << " attacks " << target <<
-		", causing " << attackDemage << " points of damage! 🛡️🗡️" RESET << std::endl;
+		", causing " << attackDamage << " points of damage! 🛡️🗡️" RESET << std::endl;
 	energyPoint -= 1;
 }
 
 void    ScavTrap::guardGate(void){
-    std::cout << YELLOW "ScavTrap " << getName()
+	std::cout << YELLOW "ScavTrap " << getName()
 		<< " has entered in Gate keeper mode. 💂" << RESET << std::endl;
 }

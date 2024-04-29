@@ -4,7 +4,7 @@ ScavTrap::ScavTrap(void): ClapTrap(){
     std::cout << "ScavTrap default constructor called" << std::endl;
     hitPoint = 100;
     energyPoint = 50;
-    attackDemage = 20;
+    attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(){
@@ -12,7 +12,7 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(){
     this->name = name;
     hitPoint = 100;
     energyPoint = 50;
-    attackDemage = 20;
+    attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &that): ClapTrap(){
@@ -30,7 +30,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &that){
 		this->name = that.getName();
 		this->hitPoint = that.getHitPoints();
 		this->energyPoint = that.getEnergyPoint();
-		this->attackDemage = that.getAttackDemage();
+		this->attackDamage = that.getAttackDamage();
 	}
 	return(*this);
 }
@@ -45,7 +45,7 @@ void	ScavTrap::attack(const std::string &target){
 		return;
 	}
 	std::cout << RED "ScavTrap " << name << " attacks " << target <<
-		", causing " << attackDemage << " points of damage! 🛡️🗡️" RESET << std::endl;
+		", causing " << attackDamage << " points of damage! 🛡️🗡️" RESET << std::endl;
 	energyPoint -= 1;
 }
 

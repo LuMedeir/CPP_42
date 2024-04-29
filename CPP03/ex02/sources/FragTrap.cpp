@@ -1,27 +1,27 @@
 # include "../includes/FragTrap.hpp"
 
 FragTrap::FragTrap(void): ClapTrap(){
-    std::cout << "FragTrap default constructor called" << std::endl;
-    hitPoint = 100;
-    energyPoint = 100;
-    attackDemage = 300;
+	std::cout << "FragTrap default constructor called" << std::endl;
+	hitPoint = 100;
+	energyPoint = 100;
+	attackDamage = 30;
 }
 
 FragTrap::FragTrap(std::string name): ClapTrap(){
-    std::cout << "FragTrap name constructor called" << std::endl;
-    this->name = name;
-    hitPoint = 100;
-    energyPoint = 50;
-    attackDemage = 20;
+	std::cout << "FragTrap name constructor called" << std::endl;
+	this->name = name;
+	hitPoint = 100;
+	energyPoint = 100;
+	attackDamage = 30;
 }
 
 FragTrap::FragTrap(FragTrap const &that): ClapTrap(){
-    std::cout <<  "FragTrap copy constructor called" << std::endl;
+	std::cout <<  "FragTrap copy constructor called" << std::endl;
 	*this = that;
 }
 
 FragTrap::~FragTrap(void){
-    std::cout <<  "FragTrap destructor called" << std::endl;
+	std::cout <<  "FragTrap destructor called" << std::endl;
 }
 
 FragTrap    &FragTrap::operator=(const FragTrap &that){
@@ -30,11 +30,11 @@ FragTrap    &FragTrap::operator=(const FragTrap &that){
 		this->name = that.getName();
 		this->hitPoint = that.getHitPoints();
 		this->energyPoint = that.getEnergyPoint();
-		this->attackDemage = that.getAttackDemage();
+		this->attackDamage = that.getAttackDamage();
 	}
 	return(*this);
 }
 
 void    FragTrap::highFivesGuys(void){
-    std::cout << PINK << "High five guys!" << RESET << std::endl;
+	std::cout << PINK << "High five guys! 🖐️" << RESET << std::endl;
 }
