@@ -22,5 +22,5 @@ Dog  &Dog::operator=(Dog const &that){
 }
 
 void    Dog::makeSound() const{
-    std::cout << "Au au! 🐱" << std::endl;
+    std::cout << CYAN << type << WHITE << ": Auau! 🐶" << RESET << std::endl;
 }

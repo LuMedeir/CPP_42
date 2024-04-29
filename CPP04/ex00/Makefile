@@ -16,6 +16,9 @@ $(NAME): $(OBJ_FILES)
 ${OBJ}/%.o : sources/%.cpp
 	@mkdir -p ${OBJ}
 	@c++ $(FLAGS) -c $< -o $@
+
+leak:
+	valgrind --leak-check=full -q ./$(NAME)
 clean:
 	@rm -rf $(OBJ)
 
@@ -23,4 +26,3 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
-

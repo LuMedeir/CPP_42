@@ -4,13 +4,13 @@
 # include "Animal.hpp"
 
 class Cat : public Animal{
-        public:
-        Cat(void);
-        Cat(Cat const &that);
-        ~Cat(void);
-        Cat &operator=(Cat const &that);
+	public:
+		Cat(void);
+		Cat(Cat const &that);
+		~Cat(void);
+		Cat &operator=(Cat const &that);
 
-        void    makeSound(void) const;
+		virtual void	makeSound(void) const;
 };
 
 #endif
