@@ -1,9 +1,12 @@
 #ifndef DOG_HPP
 # define DOG_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
-class Dog : public Animal{
+class Dog : public AAnimal{
+	private:
+		Brain *brain;
 	public:
 		Dog(void);
 		Dog(Dog const &that);
@@ -11,6 +14,7 @@ class Dog : public Animal{
 		Dog &operator=(Dog const &that);
 
 		virtual void	makeSound(void) const;
+		Brain			*getBrain(void) const;
 };
 
 #endif

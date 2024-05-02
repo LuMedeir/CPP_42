@@ -10,7 +10,7 @@ class Animal{
 	public:
 		Animal(void);
 		Animal(Animal const &that);
-		~Animal(void);
+		virtual ~Animal(void);
 		Animal &operator=(Animal const &that);
 
 		virtual void	makeSound(void) const;

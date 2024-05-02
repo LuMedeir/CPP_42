@@ -2,20 +2,19 @@
 # define ANIMAL_HPP
 
 # include <iostream>
-# include "Cat.hpp"
-# include "Dog.hpp"
+# include "Defines.hpp"
 
 class Animal{
-    protected:
-        std::string type;
-    public:
-        Animal(void);
-        Animal(Animal const &that);
-        ~Animal(void);
-        Animal &operator=(Animal const &that);
+	protected:
+		std::string type;
+	public:
+		Animal(void);
+		Animal(Animal const &that);
+		virtual ~Animal(void);
+		Animal &operator=(Animal const &that);
 
-        virtual void        makeSound(void) const;
-        std::string getType(void) const;
+		virtual void	makeSound(void) const;
+		std::string		getType(void) const;
 };
 
 #endif

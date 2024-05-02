@@ -13,7 +13,7 @@ Animal::~Animal(void){
 	std::cout << "Animal destructor called" << std::endl;
 }
 
-Animal  &Animal::operator=(Animal const &that){
+Animal	&Animal::operator=(Animal const &that){
 	std::cout << "Animal copy assignment operator called" << std::endl;
 	if(this != &that)
 		this->type = that.type;
@@ -24,6 +24,6 @@ std::string Animal::getType(void) const{
 	return(type);
 }
 
-void    Animal::makeSound(void) const{
+void	Animal::makeSound(void) const{
 	std::cout << CYAN << type << WHITE << " makes no sound! 🔇" << WHITE << std::endl;
 }

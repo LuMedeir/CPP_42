@@ -21,7 +21,7 @@ WrongAnimal  &WrongAnimal::operator=(WrongAnimal const &that){
 }
 
 std::string WrongAnimal::getType(void) const{
-	return(this->type);
+	return(type);
 }
 
 void    WrongAnimal::makeSound(void) const{

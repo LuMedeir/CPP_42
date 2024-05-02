@@ -5,17 +5,16 @@
 # include "Brain.hpp"
 
 class Cat : public Animal{
-        private:
-        Brain *brain;
+	private:
+		Brain *brain;
+	public:
+		Cat(void);
+		Cat(Cat const &that);
+		virtual ~Cat(void);
+		Cat &operator=(Cat const &that);
 
-        public:
-        Cat(void);
-        Cat(Cat const &that);
-        ~Cat(void);
-        Cat &operator=(Cat const &that);
-
-        void    makeSound(void) const;
-        Brain *getBrain(void) const;
+		virtual void	makeSound(void) const;
+		Brain			*getBrain(void) const;
 };
 
 #endif
