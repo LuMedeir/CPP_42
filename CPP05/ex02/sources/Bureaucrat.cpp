@@ -64,3 +64,21 @@ std::ostream &operator<<(std::ostream &os,Bureaucrat const &that){
 	os << CYAN << that.getName() << WHITE << ", bureaucrat grade " << that.getGrade() << RESET;
 	return (os);
 }
+
+void	Bureaucrat::signForm(AForm& form){
+	try {
+		form.beSigned(*this);
+		std::cout << this->name << " signed " << form.getName() << "." << std::endl;
+	} catch (std::exception e) {
+		std::cout << this->name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(AForm const &form){
+	try {
+		form.execute(*this);
+		std::cout << getName() << " executed " << form.getName() << std::endl;
+	} catch (const std::exception& e) {
+		std::cerr << "Execution failed: " << e.what() << std::endl;
+	}
+}
