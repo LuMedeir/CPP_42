@@ -1,5 +1,5 @@
-#ifndef AFORM_HPP
-# define AFORM_HPP
+#ifndef AForm_HPP
+# define AForm_HPP
 
 #include <iostream>
 #include "Bureaucrat.hpp"
@@ -37,7 +37,7 @@ class AForm{
 		class GradeTooLowException : public std::exception {
 			virtual const char* what() const throw();
 		};
-		class FormNotSignedException : public std::exception{
+		class AFormNotSignedException : public std::exception{
 			virtual const char *what() const throw();
 		};
 };

@@ -17,7 +17,7 @@ Bureaucrat::Bureaucrat(std::string newName, int newGrade) : name(newName), grade
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &that){
-	std::cout << "Bureaucrat copy assignment operator called." << RESET << std::endl;
+	std::cout << "Bureaucrat copy assignment operator called" << RESET << std::endl;
 	if (this != &that){
 		const_cast<std::string&>(name) = that.getName();
 		this->grade = that.getGrade();
@@ -65,20 +65,20 @@ std::ostream &operator<<(std::ostream &os,Bureaucrat const &that){
 	return (os);
 }
 
-void	Bureaucrat::signForm(AForm& form){
+void	Bureaucrat::signAForm(AForm& AForm){
 	try {
-		form.beSigned(*this);
-		std::cout << CYAN << this->name << WHITE << " signed " << form.getName() << RESET << std::endl;
+		AForm.beSigned(*this);
+		std::cout << CYAN << this->name << WHITE << " signed " << AForm.getName() << RESET << std::endl;
 	} catch (std::exception &e) {
-		std::cout << CYAN << this->name << WHITE << " couldn't sign " << form.getName() << " because " << e.what() << RESET << std::endl;
+		std::cout << CYAN << this->name << WHITE << " couldn't sign " << AForm.getName() << " because " << e.what() << RESET << std::endl;
 	}
 }
 
-void	Bureaucrat::executeForm(AForm const &form){
+void	Bureaucrat::executeAForm(AForm const &AForm){
 	try {
-		form.execute(*this);
-		std::cout << CYAN << this->name << WHITE << " executed " << form.getName() << RESET << std::endl;
+		AForm.execute(*this);
+		std::cout << CYAN << this->name << WHITE << " executed " << AForm.getName() << RESET << std::endl;
 	} catch (const std::exception& e) {
-		std::cout << CYAN << this->name << WHITE << " couldn't execute " << form.getName() << " because " << e.what() << RESET << std::endl;
+		std::cout << CYAN << this->name << WHITE << " couldn't execute " << AForm.getName() << " because " << e.what() << RESET << std::endl;
 	}
 }

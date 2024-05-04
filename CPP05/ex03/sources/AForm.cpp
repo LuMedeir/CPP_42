@@ -1,13 +1,13 @@
 # include "../includes/AForm.hpp"
 
 AForm::AForm(void) : name("Unknown"), sing(false), gradeToEx(100), gradeToSign(100){
-	std::cout << "Form default constructor called" << std::endl;
+	std::cout << "AForm default constructor called" << std::endl;
 }
 
 AForm::AForm(std::string newName, int newGradeSign, int newGradeEx)
 : name(newName), gradeToEx(newGradeEx), gradeToSign(newGradeSign){
 	sing = false;
-	std::cout << "Form constructor with parameters called" << std::endl;
+	std::cout << "AForm constructor with parameters called" << std::endl;
 	if (gradeToSign < 1 || gradeToEx < 1)
 		throw GradeTooHighException();
 	if (gradeToSign > 150 || gradeToEx > 150)
@@ -16,7 +16,7 @@ AForm::AForm(std::string newName, int newGradeSign, int newGradeEx)
 
 
 AForm::AForm(AForm const &that) : name("Unknown"), sing(false), gradeToEx(100), gradeToSign(100){
-	std::cout << "Form copy constructor called" << std::endl;
+	std::cout << "AForm copy constructor called" << std::endl;
 	if (gradeToSign < 1 || gradeToEx < 1)
 		throw GradeTooHighException();
 	if (gradeToSign > 150 || gradeToEx > 150)
@@ -25,11 +25,11 @@ AForm::AForm(AForm const &that) : name("Unknown"), sing(false), gradeToEx(100), 
 }
 
 AForm::~AForm(void){
-	std::cout << "Form destructor called" << std::endl;
+	std::cout << "AForm destructor called" << std::endl;
 }
 
 AForm &AForm::operator=(const AForm &that){
-	std::cout << "Form copy assignment operator called." << RESET << std::endl;
+	std::cout << "AForm copy assignment operator called." << RESET << std::endl;
 	if (this != &that){
 		const_cast<std::string&>(this->name) = that.getName();
 		this->sing = that.getSing();
@@ -63,8 +63,8 @@ const char* AForm::GradeTooLowException::what() const throw(){
 	return ("Grade is too low.");
 }
 
-const char* AForm::FormNotSignedException::what() const throw(){
-	return ("Form isn't signed!");
+const char* AForm::AFormNotSignedException::what() const throw(){
+	return ("AForm isn't signed!");
 }
 
 std::ostream& operator<<(std::ostream &os, AForm const &that){
@@ -75,11 +75,9 @@ std::ostream& operator<<(std::ostream &os, AForm const &that){
 	return (os);
 }
 
-
 void	AForm::beSigned(Bureaucrat const &that){
 		if (that.getGrade() > gradeToSign) {
 		throw GradeTooLowException();
 	}
 	sing = true;
 }
-

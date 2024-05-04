@@ -6,6 +6,7 @@ Form::Form(void) : name("Unknown"), sing(false), gradeToEx(100), gradeToSign(100
 
 Form::Form(std::string newName, int newGradeSign, int newGradeEx)
 : name(newName), gradeToEx(newGradeEx), gradeToSign(newGradeSign){
+		sing = false;
 	std::cout << "Form constructor with parameters called" << std::endl;
 	if (gradeToSign < 1 || gradeToEx < 1)
 		throw GradeTooHighException();
@@ -63,15 +64,15 @@ const char* Form::GradeTooLowException::what() const throw(){
 }
 
 std::ostream& operator<<(std::ostream &os, Form const &that){
-	os << CYAN << "Name: " << that.getName() << " - Form signed: " 
-		<< std::boolalpha << that.getSing() << " - Form grade to sign: "
-		<< that.getGradeToSign() << " - Form grade to execute: "
-		<< that.getGradeToEx() << RESET << std::endl;
+	os << CYAN << "Name: " << WHITE << that.getName() << CYAN << " - Form signed: " 
+		<< WHITE << std::boolalpha << that.getSing() << CYAN << " - Form grade to sign: "
+		<< WHITE << that.getGradeToSign() << CYAN << " - Form grade to execute: "
+		<< WHITE << that.getGradeToEx() << RESET << std::endl;
 	return (os);
 }
 
 void	Form::beSigned(Bureaucrat const &that){
-		if (that.getGrade() > gradeToSign) {
+	if (that.getGrade() > gradeToSign) {
 		throw GradeTooLowException();
 	}
 	sing = true;

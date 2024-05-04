@@ -10,7 +10,7 @@ PURPLE = \033[1;35m
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
-	@printf "The Makefile of [$(PURPLE)BUREAUCRAT\033[0m] has been compiled!\n"
+	@printf "The Makefile of [$(PURPLE)BUREAUCRAT📋\033[0m] has been compiled!\n"
 	@c++ $(FLAGS) -I./ $(OBJ_FILES) -o $(NAME)
 
 ${OBJ}/%.o : sources/%.cpp

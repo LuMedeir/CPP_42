@@ -15,7 +15,7 @@ AForm("ShrubberyCreationForm", 145, 137), target("NoTarget"){
 	*this = that;
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm(void) {
+ShrubberyCreationForm::~ShrubberyCreationForm(void){
 	std::cout << "ShrubberyCreationForm destructor called" << std::endl;
 
 }
@@ -31,7 +31,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	if (!getSing()) {
-		throw FormNotSignedException();
+		throw AFormNotSignedException();
 	} 
 	else if (executor.getGrade() > getGradeToEx()) {
 		throw GradeTooLowException();

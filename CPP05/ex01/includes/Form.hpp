@@ -11,8 +11,8 @@ class Form{
 	private:
 		std::string const	name;
 		bool				sing;
-		const int			gradeToEx;
-		const int			gradeToSign;
+		int const			gradeToEx;
+		int const			gradeToSign;
 	public:
 		Form(void);
 		Form(std::string name, int newGradeSign, int newGradeEx);
@@ -22,8 +22,8 @@ class Form{
 
 		int			getGradeToSign(void) const;
 		int			getGradeToEx(void) const;
-		std::string	getName(void) const;
 		bool		getSing(void) const;
+		std::string	getName(void) const;
 		void		beSigned(Bureaucrat const &that);
 
 		class GradeTooHighException : public std::exception {
