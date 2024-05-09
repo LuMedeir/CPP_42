@@ -1,5 +1,4 @@
-#includes "../includes/whatever.hpp"
-#incluea <iostream>
+#include "../includes/whatever.hpp"
 
 int main( void ) {
 	int a = 2;

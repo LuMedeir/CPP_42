@@ -1,4 +1,4 @@
-NAME = Array
+NAME = MutantStack
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRC_FILES = $(wildcard sources/*.cpp)
 OBJ = obj
@@ -11,7 +11,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
 	clear
-	@printf "The Makefile of [$(PURPLE)ARRAY\033[0m] has been compiled!\n"
+	@printf "The Makefile of [$(PURPLE)MUTANTSTACK\033[0m] has been compiled!\n"
 	@c++ $(FLAGS) -I./ $(OBJ_FILES) -o $(NAME)
 
 ${OBJ}/%.o : sources/%.cpp
