@@ -46,6 +46,20 @@ int main()
 	std::cout << CYAN << "Longest span: " << WHITE << sp2.longestSpan() << std::endl;
 	std::cout << RESET;
 
+	std::cout << PURPLE << "-------------------------- TEST 3 -----------------------------" << RESET << std::endl;
+	Span sp0 = Span(7);
+	sp0.addNumber(1);
+	sp0.addNumber(3);
+	sp0.addNumber(50);
+	sp0.addNumber(51);
+	sp0.addNumber(91);
+	sp0.addNumber(12);
+	sp0.addNumber(27);
+
+	std::cout << CYAN << "Shortest span: " << WHITE << sp0.shortestSpan() << std::endl;
+	std::cout << CYAN << "Longest span: " << WHITE << sp0.longestSpan() << std::endl;
+	std::cout << RESET;
+
 	std::cout << PURPLE << "------------------- 10000 ADDNUMBER TEST ----------------------" << RESET << std::endl;
 	Span sp3 = Span(10000);
 	std::srand(time(NULL));

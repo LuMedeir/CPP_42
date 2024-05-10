@@ -30,6 +30,11 @@ class MutantStack : public std::stack<T>
 			return (*this);
 		}
 
+	//So when we use this->c.begin() or this->c.end()
+	//in MutantStack, we are accessing the underlying
+	//container's (contêiner subjacente )iterators (std::deque)
+	//The underlying container can be accessed using this->c, where
+	//c is a member of std::stack that represents the underlying container.
 		typedef typename std::stack<T>::container_type::iterator iterator;
 		iterator	begin(void){
 			return (this->c.begin());
