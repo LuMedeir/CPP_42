@@ -20,7 +20,7 @@ ${OBJ}/%.o : sources/%.cpp
 
 leak:
 	clear
-	valgrind --leak-check=full -q ./$(NAME)
+	valgrind --leak-check=full -q ./$(NAME) input.csv
 clean:
 	@rm -rf $(OBJ)
 

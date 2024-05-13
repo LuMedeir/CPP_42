@@ -20,7 +20,7 @@ ${OBJ}/%.o : sources/%.cpp
 
 leak:
 	clear
-	valgrind --leak-check=full -q ./$(NAME)
+	valgrind --leak-check=full -q ./$(NAME) "7 7 * 7 -"
 clean:
 	@rm -rf $(OBJ)
 
